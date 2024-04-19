@@ -69,3 +69,14 @@ footer {
     height: auto;
     z-index: 1000;
 }
+
+.gif-container {
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.gif-container img {
+    max-width: 100%;
+    height: auto;
+}
