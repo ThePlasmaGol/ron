@@ -1,0 +1,15 @@
+// Definieer een lijst van items
+$items: header, section, footer;
+
+// Gebruik @each om door de lijst te itereren en de kleur naar rood te maken
+@each $item in $items {
+  #{$item} {
+    color: red;
+  }
+}
+
+main {
+  h1 {
+    text-align: center;
+  }
+}
