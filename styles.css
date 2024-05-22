@@ -1,19 +1,4 @@
-header {
-  color: red;
-}
-
-section {
-  color: red;
-}
-
-footer {
-  color: red;
-}
-
-main h1 {
-  text-align: center;
-}
-
+/* Algemene stijlen */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -27,13 +12,21 @@ header {
   text-align: center;
 }
 
+header img.logo {
+  position: relative;
+  width: 100px;
+  height: auto;
+  z-index: 1000;
+}
+
 nav ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 nav ul li {
-  display: inline;
+  display: inline-block;
   margin-right: 20px;
 }
 
@@ -48,6 +41,7 @@ main {
 
 section {
   margin-bottom: 30px;
+  color: red;
 }
 
 footer {
@@ -57,18 +51,29 @@ footer {
   text-align: center;
 }
 
+h1, h2 {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.gif-container {
+  border: 2px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Flexibele layout voor functiesectie */
 .functie {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.functie .tekst {
-  flex: 1;
-  padding: 20px;
-  border: 1px solid #ccc;
-}
-
-.functie .foto {
-  flex: 1;
+.functie .tekst, .functie .foto {
+  flex: 1 1 200px;
   padding: 20px;
   border: 1px solid #ccc;
 }
@@ -78,22 +83,23 @@ footer {
   height: auto;
 }
 
-.logo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 100px;
-  height: auto;
-  z-index: 1000;
-}
+/* Media queries voor responsiviteit */
+@media (max-width: 600px) {
+  header {
+    text-align: center;
+  }
+  
+  nav ul li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .functie {
+    flex-direction: column;
+  }
 
-.gif-container {
-  border: 2px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
+  .container {
+    flex-direction: column;
+  }
 }
-
-.gif-container img {
-  max-width: 100%;
-  height: auto;
-}/*# sourceMappingURL=styles.css.map */
