@@ -1,4 +1,10 @@
 /* Algemene stijlen */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -84,22 +90,56 @@ img {
 }
 
 /* Media queries voor responsiviteit */
+@media (max-width: 900px) {
+  nav ul li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .functie {
+    flex-direction: column;
+  }
+
+  .functie .tekst, .functie .foto {
+    flex: 1 1 100%;
+  }
+}
+
 @media (max-width: 600px) {
   header {
     text-align: center;
   }
-  
+
+  nav ul {
+    text-align: center;
+  }
+
   nav ul li {
     display: block;
     margin-right: 0;
     margin-bottom: 10px;
   }
-  
+
   .functie {
     flex-direction: column;
   }
 
+  .functie .tekst, .functie .foto {
+    flex: 1 1 100%;
+    padding: 10px;
+  }
+
   .container {
     flex-direction: column;
+  }
+
+  .gif-container {
+    padding: 10px;
+  }
+
+  footer {
+    padding: 10px;
   }
 }
