@@ -1,174 +1,25 @@
-// Algemene stijlen
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+// Definieer een lijst van items
+$items: header, section, footer;
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #ff0000;
-  color: #000000;
-  padding: 20px;
-  text-align: center;
-
-  img.logo {
-    position: relative;
-    width: 100px;
-    height: auto;
-    z-index: 1000;
+// Gebruik @each om door de lijst te itereren en de kleur naar rood te maken
+@each $item in $items {
+  #{$item} {
+    color: red;
   }
 }
 
-nav {
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      display: inline-block;
-      margin-right: 20px;
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-main {
-  padding: 20px;
-}
-
-section {
-  margin-bottom: 30px;
-  color: red;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-
-h1, h2 {
-  text-align: center;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.gif-container {
-  border: 2px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-// Flexibele layout voor functiesectie
-.functie {
-  display: flex;
-  flex-wrap: wrap;
-
-  .tekst, .foto {
-    flex: 1 1 200px;
-    padding: 20px;
-    border: 1px solid #ccc;
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-}
-
-// Media queries voor responsiviteit
-@media (max-width: 900px) {
-  nav ul li {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-
-  .functie {
-    flex-direction: column;
-  }
-
-  .functie .tekst, .functie .foto {
-    flex: 1 1 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  header {
-    text-align: center;
-  }
-
-  nav ul {
-    text-align: center;
-  }
-
-  nav ul li {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .functie {
-    flex-direction: column;
-  }
-
-  .functie .tekst, .functie .foto {
-    flex: 1 1 100%;
-    padding: 10px;
-  }
-
-  .container {
-    flex-direction: column;
-  }
-
-  .gif-container {
-    padding: 10px;
-  }
-
-  footer {
-    padding: 10px;
-  }
-}
-
-// Gebruik van @for, @each en @while
-
-// Dynamisch genereren van margin voor section elementen met @for
+// Gebruik @for om kolommen met dynamische breedtes te genereren
 @for $i from 1 through 5 {
-  .section-margin-#{$i} {
-    margin-bottom: 10px * $i;
+  .column-#{$i} {
+    width: (100% / 5) * $i;
   }
 }
 
-// Itereren door een lijst van kleuren met @each
-$colors: (header, section, footer);
-
-@each $color in $colors {
-  #{$color} {
-    background-color: lighten(red, 20%);
-  }
-}
-
-// Dynamisch genereren van padding voor functie elementen met @while
+// Gebruik @while om een reeks box-klassen te genereren
 $i: 1;
 @while $i <= 5 {
-  .functie-padding-#{$i} {
-    padding: 5px * $i;
+  .box-#{$i} {
+    width: 20% * $i;
   }
   $i: $i + 1;
 }

@@ -1,3 +1,4 @@
+/* Algemene stijlen */
 *,
 *::before,
 *::after {
@@ -16,6 +17,7 @@ header {
   padding: 20px;
   text-align: center;
 }
+
 header img.logo {
   position: relative;
   width: 100px;
@@ -28,10 +30,12 @@ nav ul {
   padding: 0;
   margin: 0;
 }
+
 nav ul li {
   display: inline-block;
   margin-right: 20px;
 }
+
 nav ul li a {
   color: #fff;
   text-decoration: none;
@@ -43,7 +47,7 @@ main {
 
 section {
   margin-bottom: 30px;
-  color: rgb(255, 255, 255);
+  color: red;
 }
 
 footer {
@@ -68,20 +72,24 @@ img {
   margin-bottom: 20px;
 }
 
+/* Flexibele layout voor functiesectie */
 .functie {
   display: flex;
   flex-wrap: wrap;
 }
+
 .functie .tekst, .functie .foto {
   flex: 1 1 200px;
   padding: 20px;
   border: 1px solid #ccc;
 }
-.functie .tekst img, .functie .foto img {
+
+.functie .foto img {
   max-width: 100%;
   height: auto;
 }
 
+/* Media queries voor responsiviteit */
 @media (max-width: 900px) {
   nav ul li {
     display: block;
@@ -89,90 +97,49 @@ img {
     margin-bottom: 10px;
     text-align: center;
   }
+
   .functie {
     flex-direction: column;
   }
+
   .functie .tekst, .functie .foto {
     flex: 1 1 100%;
   }
 }
+
 @media (max-width: 600px) {
   header {
     text-align: center;
   }
+
   nav ul {
     text-align: center;
   }
+
   nav ul li {
     display: block;
     margin-right: 0;
     margin-bottom: 10px;
   }
+
   .functie {
     flex-direction: column;
   }
+
   .functie .tekst, .functie .foto {
     flex: 1 1 100%;
     padding: 10px;
   }
+
   .container {
     flex-direction: column;
   }
+
   .gif-container {
     padding: 10px;
   }
+
   footer {
     padding: 10px;
   }
 }
-.section-margin-1 {
-  margin-bottom: 10px;
-}
-
-.section-margin-2 {
-  margin-bottom: 20px;
-}
-
-.section-margin-3 {
-  margin-bottom: 30px;
-}
-
-.section-margin-4 {
-  margin-bottom: 40px;
-}
-
-.section-margin-5 {
-  margin-bottom: 50px;
-}
-
-header {
-  background-color: #ff0000;
-}
-
-section {
-  background-color: #ff0000;
-}
-
-footer {
-  background-color: #ff0000;
-}
-
-.functie-padding-1 {
-  padding: 5px;
-}
-
-.functie-padding-2 {
-  padding: 10px;
-}
-
-.functie-padding-3 {
-  padding: 15px;
-}
-
-.functie-padding-4 {
-  padding: 20px;
-}
-
-.functie-padding-5 {
-  padding: 25px;
-}/*# sourceMappingURL=styles.css.map */
